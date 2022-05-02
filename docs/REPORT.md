@@ -14,11 +14,11 @@ The problem in focus is predicting the sale price of residential homes in Ames, 
 2. https://coax.readthedocs.io/en/latest/examples/linear_regression/jax.html
 3. https://github.com/pantelis-classes/PRML/blob/master/prml/linear/_linear_regression.py
 4. https://xgboost.readthedocs.io/en/stable/python/python_api.html
-The paper Housing Price Prediction Based on Multiple Linear Regression by Qingqi Zhang attempts to predict house prices for a dataset of homes sold in Boston using multiple linear regression. Our approach will differ from this approach because we are using a single linear regression.
+\nThe paper Housing Price Prediction Based on Multiple Linear Regression by Qingqi Zhang attempts to predict house prices for a dataset of homes sold in Boston using multiple linear regression. Our approach will differ from this approach because we are using a single linear regression.
 5. https://www.kaggle.com/code/ryanholbrook/feature-engineering-for-house-prices
-This introductory google collab was used as a reference in order to implement our data processing and test different encoding methods such as label, hot, and a combination of both
+\nThis introductory google collab was used as a reference in order to implement our data processing and test different encoding methods such as label, hot, and a combination of both
 6. https://www.youtube.com/watch?v=aOsZdf9tiNQ&t=635s
-This linear regression technique performed using jax was used as a reference in order to implement our linear regression using transformations of polynomial degree = 2 for testing
+\nThis linear regression technique performed using jax was used as a reference in order to implement our linear regression using transformations of polynomial degree = 2 for testing
 
 ## Data
 
