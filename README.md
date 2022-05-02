@@ -1,4 +1,12 @@
 # CS301 Project Proposal
+## Group 14
+
+| Member           | Github Profile |
+|------------------|--------|
+| Christopher Pane | https://github.com/hahdookin |
+| David Salazar    | https://github.com/NJSal |
+| Dylan Lederman   | https://github.com/DylanLederman |
+
 The Kaggle competition for this problem can be found [here](https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques/overview).
 
 ## About Augmenta Solutions
