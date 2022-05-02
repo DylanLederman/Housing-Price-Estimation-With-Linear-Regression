@@ -66,12 +66,12 @@ When tuning XGBRegressor there are a slew of hyperparameters to optimize, to acc
 
 ## Experiments
 
-Because of the types of data present in our dataset, encoding methods need to be used in order for our regression to utilize the entire dataset. The following pie chart shows the distribution of data types present in our dataset. Where the columns correspond to the number of fields in the dataset.
-   
    ### Preliminary Result: Cross-Validation and Linear Regression Using the Training Data
    | ![cross validation](https://github.com/hahdookin/cs301/blob/main/images/Cross-ValidatedPreliminary_trainingdata.png) |
    |:--:|
    | **Figure 3**: Determining data fit using linear Regression. After plotting the training data and applying linear regression, it was determined that lower priced houses were better fit than houses with a higher price |
+
+Because of the types of data present in our dataset, encoding methods need to be used in order for our regression to utilize the entire dataset. The following pie chart shows the distribution of data types present in our dataset. Where the columns correspond to the number of fields in the dataset.
 
    ### Data Distributions
    | ![Data type distribution](https://github.com/hahdookin/cs301/blob/main/images/DataDistribution.png) |
