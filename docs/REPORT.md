@@ -1,4 +1,13 @@
 # Augmenta: House Prices Project
 
-## Abstract and Introduction 
+## Abstract & Introduction 
 
+## Related Work
+
+## Data
+
+## Methods
+
+## Experiments
+
+## Conclusion 
