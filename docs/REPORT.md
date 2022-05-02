@@ -58,17 +58,9 @@ Comparing rmse between our implementation versus other kaggle
 
 ## Conclusion
 
-Through the models created and different feature engineering methods, we concluded that XGBRegressor with feature-engineering produced the lowest RMSE.
-It was found that the one-hot encoding, and a combination of one-hot and label encoding gave the lowest root mean square error (rme)
+Through the models created and different feature engineering methods, we concluded that XGBRegressor with feature-engineering performed the best, producing the lowest RMSE. The Jax implementation performed the worst of all of our models, but we would expect it to perform much better with more time to implement more sophisticated regression techniques. We learned that feature-engineering was far more important than hyper-parameter optimization, as it increased the effectiveness of XGBRegressor. We also learned about the importance of data encoding and feature-engineering. It was interesting to see how different encodings affected the results of our models.
 
-Label encoding rme ~ $13,000 
+Future improvements to solving this problem would include using a multiple linear regression model as well as more complex machine learning techniques such as ridge regression. Additionally, improving the capabilities of our Jax linear regression model would be done in the future. We would like to see the Jax model perform with a loss similar to that of the XGBRegressor.
 
-XGB Regressor rme ~ $17,000 
+Attempting this problem was enjoyable and served as a good introduction into applying a regression model to a real-world problem. 
 
-Our concern is that the linear needs further work, because a result of $20,000 was obtained 
-
-It is questionable to get a big difference between different encoding techniques. One-hot encoding did an excellent job, but we’re unsure why this is the case
-
-Jax significantly sped up processing speed in the linear regression using numerical data.
-
-When running applying Jax.jit to our linear regression function’s loss and forward pass function there was a significant decrease in processing speed by about a difference of 
