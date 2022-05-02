@@ -35,6 +35,7 @@ In the final phase of preprocessing, the dataset was prepped to handle missing v
 
    ### MissingValues
    ![missing values](https://github.com/hahdookin/cs301/blob/main/images/MissingValues.png)
+   #### Figure 1: Shows the data fields with missing values
 
 After understanding why these features are missing values by reading their descriptions in the data description, appropriate action was taken to handle these missing values.
 
@@ -53,12 +54,13 @@ Comparing rmse between different encoding methods such as one hot encoding, and 
 Because of the types of data present in our dataset, encoding methods need to be used in order for our regression to utilize the entire dataset. The following pie chart shows the distribution of data types present in our dataset. Where the columns correspond to the number of fields in the dataset.
    
    ### Preliminary Result: Cross-Validation and Linear Regression Using the Training Data
-
    ![cross validation](https://github.com/hahdookin/cs301/blob/main/images/Cross-ValidatedPreliminary_trainingdata.png)
-   ### After plotting the training data and applying linear regression, it was determined that lower priced houses were better fit than houses with a higher price
+   #### Figure 2: Determining data fit using linear Regression.
+   #### After plotting the training data and applying linear regression, it was determined that lower priced houses were better fit than houses with a higher price
 
    ### Data Distributions
    ![Data type distribution](https://github.com/hahdookin/cs301/blob/main/images/DataDistribution.png)
+   ### Figure 3: Data was found to take three types of value that included integer, float, and categorical type 
 
 After viewing the pie chart, it is evident that over half of our dataset consists of non-numeric columns, which will not be used in a regression algorithm. It is clear that simply ignoring columns that contain categorical data will severely hinder the success of our model. Multiple 
 
@@ -66,12 +68,12 @@ encoding techniques were considered. After much consideration, a combination of 
 
    ### Linear Regression Models
    ![Different Linear Regression Models](https://github.com/hahdookin/cs301/blob/main/images/DifferentMachineLearningResults.png)
-   ### A visualization of predictions from three linear regression models plotted against the corresponding ground truth home sale prices. (Figures from left to right are from sources [1], [2], [3] respectively)
+   ### Figure 4: A visualization of predictions from three linear regression models plotted against the corresponding ground truth home sale prices. (Figures from left to right are from sources [1], [2], [3] respectively)
    ### Comparing rmse between jax linear regression and xgboost
 
    ### Results of Encoding Techniques
    ![Encoding Techniques](https://github.com/hahdookin/cs301/blob/main/images/DifferentEncodingResults.png)
-   ### Comparing rmse between our implementation versus other kaggle
+   ### Figure 5: Comparing rmse between our implementation versus other kaggle
 
 
 ## Conclusion
