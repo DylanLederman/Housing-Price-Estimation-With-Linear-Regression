@@ -4,7 +4,7 @@
 
 In this report, we created a linear regression model to predict the sale price of homes in the Ames Iowa Housing Dataset. First, we preprocessed the data by imputing missing values and encoding categorical values. Next, we applied feature transformation and hyperparameter optimization to improve the performance of our models. Then, we compared the performance of multiple models, including a Jax implementation of linear regression as well as XGBRegressor which uses gradient boosted random forests, and determined which models worked best under certain conditions. We concluded that XGBRegressor performed the best out of our models, while noting the effect of hyper-parameter tuning was less significant than that of feature engineering.
 
-##Introduction 
+## Introduction 
 
 The problem in focus is predicting the sale price of residential homes in Ames, Iowa based on their features including square footage, construction material, age, condition, and location among many others. This problem is of great interest since the complexity of the training data offers an array of preprocessing strategies, which significantly impact the performance of machine learning algorithms. In addition, although the data is complex, it can be learned by a variety of algorithms ranging over several levels of sophistication, which makes it a helpful tool for analyzing different implementations of linear regression.
 
