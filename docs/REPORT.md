@@ -38,7 +38,7 @@ In the final phase of preprocessing, the dataset was prepped to handle missing v
    ### MissingValues
    | ![missing values](https://github.com/hahdookin/cs301/blob/main/images/MissingValues.png) |
    |:--:|
-   | Figure 1: Shows the data fields with missing values |
+   | **Figure 1**: Shows the data fields with missing values |
 
 After understanding why these features are missing values by reading their descriptions in the data description, appropriate action was taken to handle these missing values.
 
@@ -58,7 +58,9 @@ After the data has been encoded we then can choose to take a subset of the featu
 The last step in building each model is tuning their hyperparameters, for `JReg()` this mainly involves changing the learning rate and number of iterations to produce a training loss with exponential decay resembling the graph below. 
 
    ### Loss over epochs
-   ![loss vs epoch](https://github.com/hahdookin/cs301/blob/main/images/LossVsEpoch.png)
+   | ![loss vs epoch](https://github.com/hahdookin/cs301/blob/main/images/LossVsEpoch.png) |
+   |:--:|
+   | **Figure 2**: Loss decreasing over epochs |
 
 When tuning XGBRegressor there are a slew of hyperparameters to optimize, to accomplish such we use the hyperopt python library to find the best combination of [colsample_bytree, learning rate, max tree depth, number of estimators, and subsample] to minimize the test loss from XGBRegressor. 
 
@@ -69,28 +71,31 @@ Because of the types of data present in our dataset, encoding methods need to be
    ### Preliminary Result: Cross-Validation and Linear Regression Using the Training Data
    | ![cross validation](https://github.com/hahdookin/cs301/blob/main/images/Cross-ValidatedPreliminary_trainingdata.png) |
    |:--:|
-   | Figure 2: Determining data fit using linear Regression. After plotting the training data and applying linear regression, it was determined that lower priced houses were better fit than houses with a higher price |
+   | **Figure 3**: Determining data fit using linear Regression. After plotting the training data and applying linear regression, it was determined that lower priced houses were better fit than houses with a higher price |
 
    ### Data Distributions
    | ![Data type distribution](https://github.com/hahdookin/cs301/blob/main/images/DataDistribution.png) |
    |:--:|
-   | Figure 3: Data was found to take three types of value that included integer, float, and categorical type |
+   | **Figure 4**: Data was found to take three types of value that included integer, float, and categorical type |
 
 After viewing the pie chart, it is evident that over half of our dataset consists of non-numeric columns, which will not be used in a regression algorithm. It is clear that simply ignoring columns that contain categorical data will severely hinder the success of our model. Multiple encoding techniques were considered. After much consideration, a combination of label and one-hot encoding was used. Label encoding was applied to the ordinal features and one-hot encoding was applied to the nominative features. We then tested each encoding strategy with each model implementation, and recorded the performance of each model within a single encoding strategy (for figures below, “label” encoding was used). 
 
    ### Linear Regression Models
    | ![Different Linear Regression Models](https://github.com/hahdookin/cs301/blob/main/images/DifferentMachineLearningResults.png) |
    |:--:|
-   | Figure 4: A visualization of predictions from three linear regression models plotted against the corresponding ground truth home sale prices. (Figures from left to right are from sources [1], [2], [3] respectively). | Comparing rmse between jax linear regression and xgboost
+   | **Figure 5**: A visualization of predictions from three linear regression models plotted against the corresponding ground truth home sale prices. (Figures from left to right are from sources [1], [2], [3] respectively). | Comparing rmse between jax linear regression and xgboost
 
    ### Results of Encoding Techniques
    | ![Encoding Techniques](https://github.com/hahdookin/cs301/blob/main/images/DifferentEncodingResults.png) |
    |:--:|
-   | Figure 5: Comparing rmse between our implementation versus other kaggle |
+   | **Figure 6**: Comparing rmse between our implementation versus other kaggle |
 
 This data shows a clear supremacy for XGBRegressor(), but we will now show how a polynomial transformation of a subset impacts its performance as well as the jax regression implementation. 
 
-++ TABLE HERE
+   ### Dimensionality and Model Performance
+   | ![Performance](https://github.com/hahdookin/cs301/blob/main/images/model-transforms.PNG) |
+   |:--:|
+   | **Figure 7**: Comparing the performance of models with different dimensionalities |
 
 This data shows that reducing the dimensionality of the data improves the performance of `JReg()`, but hurts the prediction accuracy of `XGBRegressor()`. For both models however, the transformation of data into a 2nd degree polynomial decreased the test loss, but by an order of magnitude less than by reducing the number of features. Test loss was further reduced in the `XGBRegressor()` model by tuning the hyperparameters, however it did not make a significant difference when compared to the impact of changing the feature subset. 
 
