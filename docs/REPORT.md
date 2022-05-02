@@ -33,6 +33,8 @@ After fixing any typos or inconsistencies, the dataset was categorized. During t
 
 In the final phase of preprocessing, the dataset was prepped to handle missing values. Developing a strategy for handling missing values requires understanding which features are missing values and how they should be treated. The following graph shows the top 6 features missing values.
 
+![missing values](https://github.com/hahdookin/cs301/blob/main/images/MissingValues.png)
+
 After understanding why these features are missing values by reading their descriptions in the data description, appropriate action was taken to handle these missing values.
 
 ## Methods
