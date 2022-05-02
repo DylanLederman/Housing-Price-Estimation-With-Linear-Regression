@@ -54,6 +54,7 @@ After the data has been encoded we then transform it using the PolynomialFeature
 encoding techniques were considered. After much consideration, a combination of label and one-hot encoding was used. Label encoding was applied to the ordinal features and one-hot encoding was applied to the nominative features. We then tested each encoding strategy with each model implementation, and recorded the performance of each model within a single encoding strategy (for figures below, “label” encoding was used). 
 
 Comparing rmse between jax linear regression and xgboost
+
 Comparing rmse between our implementation versus other kaggle
 
 ## Conclusion
