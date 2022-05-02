@@ -33,7 +33,7 @@ After fixing any typos or inconsistencies, the dataset was categorized. During t
 
 In the final phase of preprocessing, the dataset was prepped to handle missing values. Developing a strategy for handling missing values requires understanding which features are missing values and how they should be treated. The following graph shows the top 6 features missing values.
 
-   ##MissingValues
+   ### MissingValues
    ![missing values](https://github.com/hahdookin/cs301/blob/main/images/MissingValues.png)
 
 After understanding why these features are missing values by reading their descriptions in the data description, appropriate action was taken to handle these missing values.
@@ -52,25 +52,26 @@ Comparing rmse between different encoding methods such as one hot encoding, and 
 
 Because of the types of data present in our dataset, encoding methods need to be used in order for our regression to utilize the entire dataset. The following pie chart shows the distribution of data types present in our dataset. Where the columns correspond to the number of fields in the dataset.
    
-   ##Preliminary Result: Cross-Validation and Linear Regression Using the Training Data
-   ![cross validation](https://github.com/hahdookin/cs301/blob/main/images/Cross-ValidatedPreliminary_trainingdata.png)
-   ##After plotting the training data and applying linear regression, it was determined that lower priced houses were better fit than houses with a higher price
+   ### Preliminary Result: Cross-Validation and Linear Regression Using the Training Data
 
-   ##Data Distributions
+   ![cross validation](https://github.com/hahdookin/cs301/blob/main/images/Cross-ValidatedPreliminary_trainingdata.png)
+   ### After plotting the training data and applying linear regression, it was determined that lower priced houses were better fit than houses with a higher price
+
+   ### Data Distributions
    ![Data type distribution](https://github.com/hahdookin/cs301/blob/main/images/DataDistribution.png)
 
 After viewing the pie chart, it is evident that over half of our dataset consists of non-numeric columns, which will not be used in a regression algorithm. It is clear that simply ignoring columns that contain categorical data will severely hinder the success of our model. Multiple 
 
 encoding techniques were considered. After much consideration, a combination of label and one-hot encoding was used. Label encoding was applied to the ordinal features and one-hot encoding was applied to the nominative features. We then tested each encoding strategy with each model implementation, and recorded the performance of each model within a single encoding strategy (for figures below, “label” encoding was used). 
 
-   ##Linear Regression Models
+   ### Linear Regression Models
    ![Different Linear Regression Models](https://github.com/hahdookin/cs301/blob/main/images/DifferentMachineLearningResults.png)
-   ##A visualization of predictions from three linear regression models plotted against the corresponding ground truth home sale prices. (Figures from left to right are from sources [1], [2], [3] respectively)
-   ##Comparing rmse between jax linear regression and xgboost
+   ### A visualization of predictions from three linear regression models plotted against the corresponding ground truth home sale prices. (Figures from left to right are from sources [1], [2], [3] respectively)
+   ### Comparing rmse between jax linear regression and xgboost
 
-   ##Results of Encoding Techniques
+   ### Results of Encoding Techniques
    ![Encoding Techniques](https://github.com/hahdookin/cs301/blob/main/images/DifferentEncodingResults.png)
-   ##Comparing rmse between our implementation versus other kaggle
+   ### Comparing rmse between our implementation versus other kaggle
 
 
 ## Conclusion
