@@ -19,11 +19,56 @@ The problem in focus is predicting the sale price of residential homes in Ames, 
    ####This introductory google collab was used as a reference in order to implement our data processing and test different encoding methods such as label, hot, and a combination of both
 7. https://www.youtube.com/watch?v=aOsZdf9tiNQ&t=635s
    ####This linear regression technique performed using jax was used as a reference in order to implement our linear regression using transformations of polynomial degree = 2 for testing
+####In Incorporating Multiple Linear Regression in Predicting the House Prices Using a Big Real Estate Dataset with 80 Independent Variables, author Azad Adbulhafedh attempts to create a model with multiple regression that accurately predicts the prices of home in the Ames Housing Dataset. One of our approaches will be similar to this approach because we will utilize a random forest in XGBRegressor.
 
 ## Data
 
+The data that we are working with is a collection of numeric values and categorical features describing an individual house in Ames, Iowa. Numeric features include Lot square footage, pool area, etc. Categorical features include house style, garage condition, etc. The dataset contains 79 features about a specific home, and 1460 rows of house data. The data was collected in 2011. 
+
+The dataset needed preprocessing in order to be used for regression. Preprocessing of the dataset was broken up into three main parts: cleaning, categorizing, and handling missing values. 
+
+During the cleaning phase of preprocessing, the description of the dataset was analyzed and compared to the actual data in order to check for any inconsistencies in our training data. Analysis revealed that the dataset contained some typos that differed from the specification of the data.
+
+After fixing any typos or inconsistencies, the dataset was categorized. During this phase of the preprocessing, the categorical feature-set was split into nominative features and ordinal features. This process was done by-hand in order to increase the effectiveness of the encoding that will be done later. Examples of ordinal features 
+
+In the final phase of preprocessing, the dataset was prepped to handle missing values. Developing a strategy for handling missing values requires understanding which features are missing values and how they should be treated. The following graph shows the top 6 features missing values.
+
+After understanding why these features are missing values by reading their descriptions in the data description, appropriate action was taken to handle these missing values.
+
 ## Methods
+
+To predict housing prices from the data set taken from Kaggle, we first process our data by imputing missing values and encoding categorical data types into numerical values. To achieve such, we take two separate approaches: label encoding and one-hot encoding. Label encoding involves assigning unique integers to a corresponding value of a categorical feature, whereas one-hot encoding splits each categorical feature’s possible values into separate columns and assigns them a binary value. Label encoding was applied to ordinal features and one-hot encoding was applied to nominative features.
+
+After the data has been encoded we then transform it using the PolynomialFeature function from the pmrl library. A polynomial transformation was chosen to capture the nonlinear relationships between the model features. Once the data has been preprocessed, we tested three different linear regression models. The first model was a hand written implementation of jax following the tutorial from (https://coax.readthedocs.io/en/latest/examples/linear_regression/jax.html), the second was an implementation of the LinearRegression function from the pmrl library, and the third and best performing model was an implementation of XGBRegressor. 
 
 ## Experiments
 
-## Conclusion 
+To predict housing prices from the data set taken from Kaggle, we first process our data by imputing missing values and encoding categorical data types into numerical values. To achieve such, we take two separate approaches: label encoding and one-hot encoding. Label encoding involves assigning unique integers to a corresponding value of a categorical feature, whereas one-hot encoding splits each categorical feature’s possible values into separate columns and assigns them a binary value. Label encoding was applied to ordinal features and one-hot encoding was applied to nominative features.
+
+After the data has been encoded we then transform it using the PolynomialFeature function from the pmrl library. A polynomial transformation was chosen to capture the nonlinear relationships between the model features. Once the data has been preprocessed, we tested three different linear regression models. The first model was a hand written implementation of jax following the tutorial from (https://coax.readthedocs.io/en/latest/examples/linear_regression/jax.html), the second was an implementation of the LinearRegression function from the pmrl library, and the third and best performing model was an implementation of XGBRegressor. 
+
+To predict housing prices from the data set taken from Kaggle, we first process our data by imputing missing values and encoding categorical data types into numerical values. To achieve such, we take two separate approaches: label encoding and one-hot encoding. Label encoding involves assigning unique integers to a corresponding value of a categorical feature, whereas one-hot encoding splits each categorical feature’s possible values into separate columns and assigns them a binary value. Label encoding was applied to ordinal features and one-hot encoding was applied to nominative features.
+
+After the data has been encoded we then transform it using the PolynomialFeature function from the pmrl library. A polynomial transformation was chosen to capture the nonlinear relationships between the model features. Once the data has been preprocessed, we tested three different linear regression models. The first model was a hand written implementation of jax following the tutorial from (https://coax.readthedocs.io/en/latest/examples/linear_regression/jax.html), the second was an implementation of the LinearRegression function from the pmrl library, and the third and best performing model was an implementation of XGBRegressor.
+
+encoding techniques were considered. After much consideration, a combination of label and one-hot encoding was used. Label encoding was applied to the ordinal features and one-hot encoding was applied to the nominative features. We then tested each encoding strategy with each model implementation, and recorded the performance of each model within a single encoding strategy (for figures below, “label” encoding was used). 
+
+Comparing rmse between jax linear regression and xgboost
+Comparing rmse between our implementation versus other kaggle
+
+## Conclusion
+
+Through the models created and different feature engineering methods, we concluded that XGBRegressor with feature-engineering produced the lowest RMSE.
+It was found that the one-hot encoding, and a combination of one-hot and label encoding gave the lowest root mean square error (rme)
+
+Label encoding rme ~ $13,000 
+
+XGB Regressor rme ~ $17,000 
+
+Our concern is that the linear needs further work, because a result of $20,000 was obtained 
+
+It is questionable to get a big difference between different encoding techniques. One-hot encoding did an excellent job, but we’re unsure why this is the case
+
+Jax significantly sped up processing speed in the linear regression using numerical data.
+
+When running applying Jax.jit to our linear regression function’s loss and forward pass function there was a significant decrease in processing speed by about a difference of 
